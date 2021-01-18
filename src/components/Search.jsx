@@ -43,6 +43,11 @@ const AdvancedSearchForm = () => {
                         <Input style={{height:32}} placeholder="请输入查询账号" />
                     </Form.Item>
                 </Col>
+                <Col span={4} key='uid'>
+                    <Form.Item  name='username' label='UID'>
+                        <Input style={{height:32}} placeholder="请输入查询UID" />
+                    </Form.Item>
+                </Col>
                 <Col span={3} key='startTime'>
                     <Form.Item name='startTime'>
                         <DatePicker placeholder="请选择开始时间" showTime onChange={onChange} onOk={onOk} />
