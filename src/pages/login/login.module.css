@@ -1,0 +1,30 @@
+.body {
+    height: 100%;
+    width: 100%;
+    background: url("../../assets/login.jpg") no-repeat;
+    background-size:  cover;
+}
+.content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.content > section {
+    background-color: rgba(255, 255, 255, .3);
+    width: 400px;
+    height: 300px;
+    padding: 30px 20px;
+}
+.login_form_button {
+    width: 100%;
+}
+h2 {
+    font-size: 30px;
+    text-align: center;
+}
+input {
+    height: 20px;
+}
