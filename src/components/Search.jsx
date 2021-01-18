@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {Form, Row, Col, Input, Button, DatePicker} from 'antd';
 import { DownOutlined, UpOutlined } from '@ant-design/icons';
+import styles from '../components/search.module.css'
 
 
 function onChange(value, dateString) {
@@ -32,12 +33,13 @@ const AdvancedSearchForm = () => {
 
     return (
         <Form
+            style={{styles}}
             form={form}
             name="advanced_search"
             className="ant-advanced-search-form"
             onFinish={onFinish}
         >
-            <Row gutter={24}>
+            <Row gutter={24} className={styles.userSearchForm}>
                 <Col span={4} key='username'>
                     <Form.Item  name='username' label='账号名'>
                         <Input style={{height:32}} placeholder="请输入查询账号" />
@@ -127,7 +129,7 @@ const AdvancedSearchForm = () => {
 
 function Search() {
     return(
-        <div>
+        <div className={styles.content}>
             <AdvancedSearchForm />
         </div>
     );

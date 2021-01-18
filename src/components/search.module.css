@@ -1,3 +1,6 @@
-.search_input {
-    height: 32px;
+.content {
+    height: 40px;
+}
+.userSearchForm {
+    padding: 5px 24px;
 }
