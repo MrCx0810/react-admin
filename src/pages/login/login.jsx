@@ -1,17 +1,18 @@
 import React from 'react';
-import {Form, Input, Button, Checkbox}  from 'antd'
+import {Form, Input, Button}  from 'antd'
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import styles from './login.module.css'
 
 function Login(){
 
-    const layout = {
-        labelCol: { span: 8 },
-        wrapperCol: { span: 16 },
-    };
-    const tailLayout = {
-        wrapperCol: { offset: 8, span: 16 },
-    };
+    // const layout = {
+    //     labelCol: { span: 8 },
+    //     wrapperCol: { span: 16 },
+    // };
+    // const tailLayout = {
+    //     wrapperCol: { offset: 8, span: 16 },
+    // };
+
     const onFinish = (values) => {
         console.log('Success:', values);
     };
@@ -20,7 +21,7 @@ function Login(){
         <div className={styles.body}>
             <div className={styles.content}>
                 <section>
-                    <h2>REACT管理系统</h2>
+                    <h2>React-Manager</h2>
                     <div>
                         <Form
                             name="normal_login"
