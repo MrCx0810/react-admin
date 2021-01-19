@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {Form, Row, Col, Input, Button, DatePicker} from 'antd';
-import { DownOutlined, UpOutlined } from '@ant-design/icons';
 import styles from './search.module.css'
 
 
@@ -14,7 +13,7 @@ function onOk(value) {
 }
 
 const AdvancedSearchForm = () => {
-    const [expand, setExpand] = useState(false);
+    // const [expand, setExpand] = useState(false);
     const [form] = Form.useForm();
 
     // const getFields = () => {
@@ -46,7 +45,7 @@ const AdvancedSearchForm = () => {
                     </Form.Item>
                 </Col>
                 <Col span={4} key='uid'>
-                    <Form.Item  name='uid' label='UID'>
+                    <Form.Item  name='uid' label='用户UID'>
                         <Input style={{height:32}} placeholder="请输入查询UID" />
                     </Form.Item>
                 </Col>
@@ -78,6 +77,17 @@ const AdvancedSearchForm = () => {
                         }}
                     >
                         重置
+                    </Button>
+                    <Button
+                        type="dashed" htmlType="submit"
+                        style={{
+                            margin: '0 8px',
+                        }}
+                        onClick={() => {
+                            form.resetFields();
+                        }}
+                    >
+                        导出
                     </Button>
                    {/* <a
                         style={{

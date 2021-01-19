@@ -1,7 +1,9 @@
-import React from 'react';
-import {Card, Table} from 'antd';
+import React, { useState } from 'react';
+import {Button, Card, Form, Input, Pagination, Table} from 'antd';
 import styles from './user.module.css'
 import Search from "../../components/user/Search";
+import { PlusOutlined} from '@ant-design/icons';
+import Modal from "antd/es/modal/Modal";
 
 
 function User() {
@@ -9,35 +11,8 @@ function User() {
         {
             title: '用户名',
             dataIndex: 'name',
-            filters: [
-                {
-                    text: 'Joe',
-                    value: 'Joe',
-                },
-                {
-                    text: 'Jim',
-                    value: 'Jim',
-                },
-                {
-                    text: 'Submenu',
-                    value: 'Submenu',
-                    children: [
-                        {
-                            text: 'Green',
-                            value: 'Green',
-                        },
-                        {
-                            text: 'Black',
-                            value: 'Black',
-                        },
-                    ],
-                },
-            ],
-            // specify the condition of filtering result
-            // here is that finding the name started with `value`
-            onFilter: (value, record) => record.name.indexOf(value) === 0,
+            defaultSortOrder: 'descend',
             sorter: (a, b) => a.name.length - b.name.length,
-            sortDirections: ['descend'],
         },
         {
             title: '年龄',
@@ -103,13 +78,73 @@ function User() {
         console.log('params', pagination, filters, sorter, extra);
     }
 
+    const onFinish = (values) => {
+        console.log('Success:', values);
+    };
+
+    const onFinishFailed = (errorInfo) => {
+        console.log('Failed:', errorInfo);
+    };
+
+    const [state, setState] = useState({visible: false});
+    // console.log('state=', state)
     return (
         <div className={styles.body}>
-            <Card type="inner" className={styles.search}>
+            <Card type="inner">
                 <Search/>
             </Card>
+            <div style={{marginTop:20}}>
+                <>
+                    <Button type="primary" onClick={() => setState({visible: true})}>
+                        <PlusOutlined />
+                        添加
+                    </Button>
+                    <Modal
+                        maskStyle={{opacity:'.6',background:'rgba(0,0,0,.5)',backdropFilter: 'blur(10px)',animation:'none'}}
+                        title="添加"
+                        visible={state.visible}
+                        onOk={() => setState({visible: true})}
+                        onCancel={() => setState({visible: false})}
+                        okText="确认"
+                        cancelText="取消"
+                        destroyOnClose
+                        maskClosable={false}
+                    >
+                        <Form
+                            name="basic"
+                            initialValues={{ remember: true }}
+                            onFinish={onFinish}
+                            onFinishFailed={onFinishFailed}
+                        >
+                            <Form.Item
+                                label="用户名"
+                                name="username"
+                                rules={[{ required: true, message: '请输入用户名' }]}
+                            >
+                                <Input />
+                            </Form.Item>
+
+                            <Form.Item
+                                label="地址"
+                                name="address"
+                                rules={[{ required: true, message: '请输入地址信息' }]}
+                            >
+                                <Input />
+                            </Form.Item>
+                        </Form>
+                    </Modal>
+                </>
+            </div>
             <br/>
-            <Table columns={columns} dataSource={data} onChange={onChange} />
+            <Table pagination={false} columns={columns} dataSource={data} onChange={onChange}/>
+            <div className={styles.page} style={{marginTop:30, textAlign:'center'}}>
+                <Pagination
+                    total={85}
+                    showSizeChanger
+                    showQuickJumper
+                    showTotal={total => `共 ${total} 条`}
+                />
+            </div>
         </div>
     );
 }

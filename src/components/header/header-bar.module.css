@@ -6,14 +6,14 @@
     padding: 0 25px;
     justify-content: space-between;
 }
-.peoject_title {
+.project_title {
     width: 400px;
     font-size: 25px;
     color: hsla(0,0%,100%,.9);
     display: flex;
     align-items: center;
 }
-.peoject_title > img {
+.project_title > img {
     width: 37px;
     height: 37px;
     margin: 0 0 0 15px;
@@ -21,10 +21,27 @@
 .right{
     display:flex;
     text-align:right;
+    margin-right: 10px;
     color: hsla(0,0%,100%,.9);
     align-items: center;
+    cursor:pointer;
 }
-.conent{
-    margin: 0 0 0 5px;
+.content{
+    margin: 0 0 0 10px;
     font-size: 14px;
+}
+.info{
+    width: 100px;
+    height: 60px;
+}
+.info > span {
+    display:flex;
+    align-items: center;
+    text-align:left;
+    cursor:pointer;
+    margin: 8px 0;
+}
+.line {
+    margin: 0;
+    width: 100%;
 }

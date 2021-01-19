@@ -1,14 +1,11 @@
 import React from 'react';
-
 import style from "./home.module.css"
 import HeaderBar from "../../components/header/HeaderBar";
 import HomeContent from "../../components/content/HomeContent";
 import Menus from "../../components/menu/Menus";
-import {Layout, Menu, Breadcrumb, Card} from 'antd';
+import {Layout, Breadcrumb, Card} from 'antd';
+import { CopyrightOutlined} from '@ant-design/icons';
 import styles from "../user/user.module.css";
-
-const { SubMenu } = Menu;
-const { Header, Content, Sider } = Layout;
 
 function Home() {
     return (
@@ -24,6 +21,13 @@ function Home() {
                             </Card>
                         </Breadcrumb>
                         <HomeContent/>
+                        <div style={{ margin: '0 24px' }}>
+                            <Card type="inner" className={styles.footer}>
+                                Copyright&nbsp;&nbsp;
+                                <CopyrightOutlined />&nbsp;
+                                React Admin 2021 by RC-Team
+                            </Card>
+                        </div>
                     </Layout>
                 </Layout>
             </Layout>

@@ -1,9 +1,7 @@
 import React from 'react';
-import Menus from "../menu/Menus"
-import Main from "../main/main";
-import {Breadcrumb, Card, Layout} from "antd";
-import style from "./home-content.module.css"
-import styles from "../../pages/user/user.module.css";
+import {Route, Redirect, Switch} from "react-router-dom";
+import {Layout} from "antd";
+import User from "../../pages/user/user";
 
 const { Content } = Layout;
 
@@ -12,14 +10,16 @@ function HomeContent() {
         <Content
             className="site-layout-background"
             style={{
-                padding: 24,
+                padding: '20px 10px',
                 margin: 0,
                 minHeight: 280,
+                backgroundColor: '#f0f2f5'
             }}
         >
-            <Card type="inner" className={styles.search}>
-                内容
-            </Card>
+            <Switch>
+                <Route path='/user' component={User}/>
+                <Redirect to='/home'/>
+            </Switch>
         </Content>
     );
 }

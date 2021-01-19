@@ -11,12 +11,16 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
 }
 .content > section {
     background-color: rgba(255, 255, 255, .3);
     width: 400px;
     height: 300px;
     padding: 30px 20px;
+    -webkit-box-shadow: #666666 0 0 10px;
+    -moz-box-shadow: #666 0 0 10px;
+    box-shadow: #666 0 0 10px;
 }
 .login_form_button {
     width: 100%;
