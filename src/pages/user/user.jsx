@@ -1,7 +1,7 @@
 import React from 'react';
 import {Card, Table} from 'antd';
 import styles from './user.module.css'
-import Search from "../../components/Search";
+import Search from "../../components/user/Search";
 
 
 function User() {

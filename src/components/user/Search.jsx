@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {Form, Row, Col, Input, Button, DatePicker} from 'antd';
 import { DownOutlined, UpOutlined } from '@ant-design/icons';
-import styles from '../components/search.module.css'
+import styles from './search.module.css'
 
 
 function onChange(value, dateString) {
@@ -46,7 +46,7 @@ const AdvancedSearchForm = () => {
                     </Form.Item>
                 </Col>
                 <Col span={4} key='uid'>
-                    <Form.Item  name='username' label='UID'>
+                    <Form.Item  name='uid' label='UID'>
                         <Input style={{height:32}} placeholder="请输入查询UID" />
                     </Form.Item>
                 </Col>
@@ -79,7 +79,7 @@ const AdvancedSearchForm = () => {
                     >
                         重置
                     </Button>
-                    <a
+                   {/* <a
                         style={{
                             fontSize: 12,
                         }}
@@ -88,7 +88,7 @@ const AdvancedSearchForm = () => {
                         }}
                     >
                         {expand ? <UpOutlined /> : <DownOutlined />} 展开
-                    </a>
+                    </a>*/}
                 </Col>
             </Row>
             {/*<Row>*/}

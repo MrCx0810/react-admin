@@ -1,8 +1,8 @@
 import React from 'react';
 
 import style from "./home.module.css"
-import Header from "../../component/header/Header";
-import Content from "../../component/content/Content";
+import Header from "../../components/header/Header";
+import Content from "../../components/content/Content";
 
 function Home() {
     return (
