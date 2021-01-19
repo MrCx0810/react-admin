@@ -1,0 +1,30 @@
+.header{
+    height: 60px;
+    width: 100%;
+    background: #282C34;
+    display: flex;
+    padding: 0 25px;
+    justify-content: space-between;
+}
+.peoject_title {
+    width: 400px;
+    font-size: 25px;
+    color: hsla(0,0%,100%,.9);
+    display: flex;
+    align-items: center;
+}
+.peoject_title > img {
+    width: 37px;
+    height: 37px;
+    margin: 0 0 0 15px;
+}
+.right{
+    display:flex;
+    text-align:right;
+    color: hsla(0,0%,100%,.9);
+    align-items: center;
+}
+.conent{
+    margin: 0 0 0 5px;
+    font-size: 14px;
+}

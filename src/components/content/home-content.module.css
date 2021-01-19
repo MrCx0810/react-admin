@@ -1,0 +1,8 @@
+.content{
+    flex: 1;
+    display: flex;
+    width: 20%;
+    padding: 24px;
+    margin: 0;
+    minHeight: 280;
+}

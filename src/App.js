@@ -16,7 +16,7 @@ function App() {
                <Login />
            </Route>
             <Route path='/'>
-                <Home></Home>
+                <Home/>
             </Route>
         </BrowserRouter>
       </ConfigProvider>
