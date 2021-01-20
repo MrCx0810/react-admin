@@ -1,34 +1,40 @@
 .body {
     height: 100%;
     width: 100%;
-    background: url("../../assets/login.jpg") no-repeat;
+    background: url("../../assets/login.png") no-repeat center;
     background-size:  cover;
 }
 .content {
     height: 100%;
-    width: 100%;
+    width: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 200px 300px;
     flex-direction: column;
-
 }
 .content > section {
-    background-color: rgba(255, 255, 255, .3);
+    background-color: rgba(255, 255, 255, .1);
     width: 400px;
-    height: 300px;
     padding: 30px 20px;
-    -webkit-box-shadow: #666666 0 0 10px;
-    -moz-box-shadow: #666 0 0 10px;
-    box-shadow: #666 0 0 10px;
+    /*-webkit-box-shadow: #666666 0 0 10px;*/
+    /*-moz-box-shadow: #666 0 0 10px;*/
+    /*box-shadow: #666 0 0 10px;*/
+}
+.login_form {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 .login_form_button {
     width: 100%;
+    background: linear-gradient(to right bottom, rgb(62, 54, 217), rgb(82, 126, 249));
 }
 h2 {
     font-size: 30px;
     text-align: center;
 }
 input {
-    height: 20px;
+    height: 32px;
 }

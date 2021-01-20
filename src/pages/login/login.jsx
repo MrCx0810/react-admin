@@ -22,27 +22,29 @@ function Login(){
             <div className={styles.content}>
                 <section>
                     <h2>React-Manager</h2>
-                    <div>
+                    <div className={styles.form}>
                         <Form
                             name="normal_login"
-                            className="login-form"
+                            autoComplete = "off"
+                            className={styles.login_form}
                             initialValues={{ remember: true }}
                             onFinish={onFinish}
                         >
                             <Form.Item
                                 name="username"
-                                rules={[{ required: true, message: '请输入登录名' }]}
+                                rules={[{ required: true, message: '请输入账户名' }]}
                             >
-                                <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="请输入登录名" />
+                                <Input style={{borderRadius:30, height: 40}}  prefix={<UserOutlined className="site-form-item-icon" />} placeholder="账户名" />
                             </Form.Item>
                             <Form.Item
                                 name="password"
                                 rules={[{ required: true, message: '请输入登录密码' }]}
                             >
                                 <Input
+                                    style={{borderRadius:30, height: 40}}
                                     prefix={<LockOutlined className="site-form-item-icon" />}
                                     type="password"
-                                    placeholder="请输入登录密码"
+                                    placeholder="账户密码"
                                 />
                             </Form.Item>
                             {/*<Form.Item>*/}
@@ -56,8 +58,8 @@ function Login(){
                             {/*</Form.Item>*/}
 
                             <Form.Item>
-                                <Button type="primary" htmlType="submit" className={styles.login_form_button}>
-                                    提交
+                                <Button style={{borderRadius:30, height: 40, fontSize:20, fontWeight:'bold'}} type="primary" htmlType="submit" className={styles.login_form_button}>
+                                   点 击 登 录
                                 </Button>
                             </Form.Item>
                         </Form>
