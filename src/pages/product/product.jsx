@@ -1,75 +1,96 @@
 import React, { useState } from 'react';
 import {Button, Card, Form, Input, Pagination, Table} from 'antd';
-import styles from './user.module.css'
-import Search from "../../components/user/Search";
+import styles from './product.module.css'
+import ProductSearch from "../../components/product/Search";
 import { PlusOutlined} from '@ant-design/icons';
 import Modal from "antd/es/modal/Modal";
 
 
-function User() {
+function Product() {
     const columns = [
         {
-            title: '用户名',
+            title: '序号',
+            dataIndex: 'id',
+            sorter: (a, b) => a.id.length - b.id.length,
+        },
+        {
+            title: '商品名称',
             dataIndex: 'name',
-            defaultSortOrder: 'descend',
             sorter: (a, b) => a.name.length - b.name.length,
         },
         {
-            title: '年龄',
-            dataIndex: 'age',
-            sorter: (a, b) => a.age - b.age,
+            title: '商品图片',
+            dataIndex: 'productUrl',
+            render: (productUrl) => <img style={{height:40, width:40, borderRadius:2 }} src={productUrl}/>
         },
         {
-            title: '地址',
-            dataIndex: 'address',
-            filters: [
-                {
-                    text: '伦敦',
-                    value: 'London',
-                },
-                {
-                    text: '纽约',
-                    value: 'New York',
-                },
-            ],
-            filterMultiple: false,
-            onFilter: (value, record) => record.address.indexOf(value) === 0,
-            sorter: (a, b) => a.address.length - b.address.length,
-            sortDirections: ['descend', 'ascend'],
+            title: '销量',
+            dataIndex: 'num',
+        },
+        {
+            title: '状态',
+            dataIndex: 'status',
+            sorter: (a, b) => a.status.length - b.status.length,
+        },
+        {
+            title: '时间',
+            dataIndex: 'createTime',
+            sorter: (a, b) => a.createTime.length - b.createTime.length,
         },
     ];
 
     const data = [
         {
-            key: '1',
-            name: 'John Brown',
-            age: 32,
-            address: 'New York No. 1 Lake Park',
+            id: '1',
+            name: '良品铺子',
+            productUrl: 'https://gitee.com/chu1204505056/image/raw/master/table/vab-image-20.jpg',
+            num: 100,
+            status: 1,
         },
         {
-            key: '2',
-            name: 'Jim Green',
-            age: 42,
-            address: 'London No. 1 Lake Park',
+            id: '2',
+            name: '良品铺子',
+            productUrl: 'https://gitee.com/chu1204505056/image/raw/master/table/vab-image-20.jpg',
+            num: 166,
+            status: 1,
         },
         {
-            key: '3',
-            name: 'Joe Black',
-            age: 32,
-            address: 'Sidney No. 1 Lake Park',
+            id: '3',
+            name: '良品铺子',
+            productUrl: 'https://gitee.com/chu1204505056/image/raw/master/table/vab-image-20.jpg',
+            num: 309,
+            status: 1,
         },
         {
-            key: '4',
-            name: 'Jim Red',
-            age: 32,
-            address: 'London No. 2 Lake Park',
+            id: '4',
+            name: '良品铺子',
+            productUrl: 'https://gitee.com/chu1204505056/image/raw/master/table/vab-image-20.jpg',
+            num: 309,
+            status: 1,
         },
         {
-            key: '1',
-            name: 'John Brown',
-            age: 32,
-            address: 'New York No. 1 Lake Park',
+            id: '5',
+            name: '良品铺子',
+            productUrl: 'https://gitee.com/chu1204505056/image/raw/master/table/vab-image-20.jpg',
+            num: 309,
+            status: 1,
         },
+        {
+            id: '6',
+            name: '良品铺子',
+            productUrl: 'https://gitee.com/chu1204505056/image/raw/master/table/vab-image-20.jpg',
+            num: 309,
+            status: 1,
+        },
+        {
+            id: '7',
+            name: '良品铺子',
+            productUrl: 'https://gitee.com/chu1204505056/image/raw/master/table/vab-image-20.jpg',
+            num: 309,
+            status: 1,
+        },
+
+
 
     ];
 
@@ -90,7 +111,7 @@ function User() {
     return (
         <div className={styles.body}>
             <Card type="inner">
-                <Search/>
+                <ProductSearch/>
             </Card>
             <div style={{marginTop:20}}>
                 <>
@@ -116,17 +137,17 @@ function User() {
                             onFinishFailed={onFinishFailed}
                         >
                             <Form.Item
-                                label="用户名"
-                                name="username"
-                                rules={[{ required: true, message: '请输入用户名' }]}
+                                label="商品名称"
+                                name="productName"
+                                rules={[{ required: true, message: '请输入商品名称' }]}
                             >
                                 <Input />
                             </Form.Item>
 
                             <Form.Item
-                                label="地址"
-                                name="address"
-                                rules={[{ required: true, message: '请输入地址信息' }]}
+                                label="商品图片"
+                                name="productUrl"
+                                rules={[{ required: true, message: '请输入商品图片' }]}
                             >
                                 <Input />
                             </Form.Item>
@@ -148,4 +169,4 @@ function User() {
     );
 }
 
-export default User;
+export default Product;

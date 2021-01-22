@@ -1,0 +1,22 @@
+.body{
+    background-color: #f0f2f5;
+    padding: 0px 20px;
+}
+.searchInput {
+    height: 29px;
+}
+.footer {
+    border-top:1px dashed #d4d2d2;
+    text-align: center;
+    color: #1890ff;
+}
+
+input {
+    height: 32px;
+}
+
+label {
+    display: inline-block;
+    width: 70px;
+    text-align: right;
+}

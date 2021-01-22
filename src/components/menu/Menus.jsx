@@ -2,8 +2,12 @@ import React from 'react';
 import style from "./menu.module.css"
 import {Menu} from 'antd';
 import {
-    PieChartOutlined,
-    MailOutlined,
+    TeamOutlined,
+    HomeOutlined,
+    ToolOutlined,
+    ShoppingCartOutlined,
+    MenuOutlined,
+    SettingOutlined
 } from '@ant-design/icons';
 import Sider from "antd/es/layout/Sider";
 import {Link} from "react-router-dom";
@@ -22,40 +26,40 @@ function Menus() {
                 onClick={handleClick}
                 style={{background:'transparent'}}
             >
-                <Menu.Item key='/home' icon={<PieChartOutlined />}>
+                <Menu.Item key='/home' icon={<HomeOutlined />}>
                     <Link to='/home'>
                         首页
                     </Link>
                 </Menu.Item>
-                <SubMenu key='/user' icon={<MailOutlined />} title="用户管理">
+                <SubMenu key='/user' icon={<TeamOutlined />} title="用户管理">
                     <Menu.Item key="/user">
                         <Link to='/user'>
                             用户列表
                         </Link>
                     </Menu.Item>
                 </SubMenu>
-                <SubMenu icon={<MailOutlined />} title="权限管理">
+                <SubMenu icon={<ToolOutlined />} title="权限管理">
                     <Menu.Item key="/role">
                         <Link to='/role'>
                             角色权限
                         </Link>
                     </Menu.Item>
                 </SubMenu>
-                <SubMenu icon={<MailOutlined />} title="商品管理">
+                <SubMenu icon={<ShoppingCartOutlined />} title="商品管理">
                     <Menu.Item key="/product">
                         <Link to='/product'>
                             商品列表
                         </Link>
                     </Menu.Item>
                 </SubMenu>
-                <SubMenu icon={<MailOutlined />} title="订单管理">
+                <SubMenu icon={<MenuOutlined />} title="订单管理">
                     <Menu.Item key="/orders">
                         <Link to='/orders'>
                             订单列表
                         </Link>
                     </Menu.Item>
                 </SubMenu>
-                <SubMenu icon={<MailOutlined />} title="系统管理">
+                <SubMenu icon={<SettingOutlined />} title="系统管理">
                     <Menu.Item key="/system">
                         <Link to='/system'>
                             系统参数

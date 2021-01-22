@@ -2,6 +2,7 @@ import React from 'react';
 import {Route, Redirect, Switch} from "react-router-dom";
 import {Layout} from "antd";
 import User from "../../pages/user/user";
+import Product from "../../pages/product/product";
 
 const { Content } = Layout;
 
@@ -18,6 +19,7 @@ function HomeContent() {
         >
             <Switch>
                 <Route path='/user' component={User}/>
+                <Route path='/product' component={Product}/>
                 <Redirect to='/home'/>
             </Switch>
         </Content>
