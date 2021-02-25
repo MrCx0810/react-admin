@@ -20,7 +20,6 @@ function HomeContent() {
             <Switch>
                 <Route path='/user' component={User}/>
                 <Route path='/product' component={Product}/>
-                <Redirect to='/home'/>
             </Switch>
         </Content>
     );

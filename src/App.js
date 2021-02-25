@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import {Route, BrowserRouter,Switch} from 'react-router-dom'
+import {Route, BrowserRouter,Switch, Redirect} from 'react-router-dom'
 import {ConfigProvider} from "antd";
 import zhCN from 'antd/lib/locale/zh_CN';
 import 'moment/locale/zh-cn';
@@ -9,11 +9,14 @@ import Login from './pages/login/login'
 import Home from "./pages/home/home";
 
 function App() {
-  return (
+    const token = localStorage.getItem("token");
+    return (
       <ConfigProvider  locale={zhCN}>
         <BrowserRouter>
             <Switch>
-                <Route path='/login' component={Login}/>
+                <Route path='/login'>
+                    {token ? <Redirect to='/'/> : <Login />}
+                </Route>
                 <Route path='/' component={Home}/>
             </Switch>
         </BrowserRouter>

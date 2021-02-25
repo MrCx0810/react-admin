@@ -2,6 +2,8 @@ import React from 'react';
 import {Form, Input, Button}  from 'antd'
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import styles from './login.module.css'
+import {login} from '../../api/request'
+import { useHistory } from 'react-router-dom'
 
 function Login(){
 
@@ -12,9 +14,16 @@ function Login(){
     // const tailLayout = {
     //     wrapperCol: { offset: 8, span: 16 },
     // };
+    const history = useHistory();
 
     const onFinish = (values) => {
         console.log('Success:', values);
+        login(values).then(res => {
+            console.log(res);
+            history.replace("/")
+            //保存token
+            localStorage.setItem("token", res.data.token);
+       });
     };
 
     return (
@@ -31,7 +40,7 @@ function Login(){
                             onFinish={onFinish}
                         >
                             <Form.Item
-                                name="username"
+                                name="account"
                                 rules={[{ required: true, message: '请输入账户名' }]}
                             >
                                 <Input style={{borderRadius:30, height: 40}}  prefix={<UserOutlined className="site-form-item-icon" />} placeholder="账户名" />
