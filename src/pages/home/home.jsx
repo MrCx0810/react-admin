@@ -1,25 +1,22 @@
 import React from 'react';
-import style from "./home.module.css"
+import styles from "./home.module.css"
 import HeaderBar from "../../components/header/HeaderBar";
 import HomeContent from "../../components/content/HomeContent";
 import Menus from "../../components/menu/Menus";
 import {Layout, Breadcrumb, Card} from 'antd';
 import { CopyrightOutlined} from '@ant-design/icons';
-import styles from "../user/user.module.css";
+
 
 function Home() {
-
     return (
-        <div className={style.main}>
+        <div className={styles.main}>
             <Layout>
                 <HeaderBar/>
                 <Layout>
                     <Menus/>
                     <Layout style={{ backgroundColor :'#f6f8f9'}}>
-                        <Breadcrumb style={{ margin: '0 0' }}>
-                            <Card type="inner" className={styles.search}>
-                                标签栏
-                            </Card>
+                        <Breadcrumb className={styles.tag}>
+                            <Breadcrumb.Item>标签栏</Breadcrumb.Item>
                         </Breadcrumb>
                         <HomeContent />
                         <div>

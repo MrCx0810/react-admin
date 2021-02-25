@@ -21,6 +21,9 @@ function HomeContent() {
             <Switch>
                 <Route path='/user' component={User}/>
                 <Route path='/product' component={Product}/>
+                <Route>
+                    这是首页的数据
+                </Route>
             </Switch>
         </Content>
     );

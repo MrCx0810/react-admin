@@ -5,6 +5,12 @@
     display: flex;
     flex-direction: column;
 }
+.tag{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
 .header{
     width: 100%;
     background: #282C34;

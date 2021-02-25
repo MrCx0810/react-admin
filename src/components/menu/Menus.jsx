@@ -31,7 +31,7 @@ function Menus() {
                         首页
                     </Link>
                 </Menu.Item>
-                <SubMenu key='/user' icon={<TeamOutlined />} title="用户管理">
+                <SubMenu icon={<TeamOutlined />} title="用户管理">
                     <Menu.Item key="/user">
                         <Link to='/user'>
                             用户列表
