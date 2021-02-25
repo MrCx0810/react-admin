@@ -8,6 +8,7 @@ import { CopyrightOutlined} from '@ant-design/icons';
 import styles from "../user/user.module.css";
 
 function Home() {
+
     return (
         <div className={style.main}>
             <Layout>

@@ -5,14 +5,22 @@ import AvatarUrl from "../../assets/avatar.jpg"
 import Avatar from "antd/es/avatar/avatar";
 import { Divider, Popover} from "antd";
 import { LogoutOutlined, UserOutlined} from '@ant-design/icons';
+import { useHistory } from 'react-router-dom'
 
 function HeaderBar() {
+    const history = useHistory();
+
+    function out() {
+        // alert("这是退出")
+        localStorage.removeItem("token");
+        history.replace("/login");
+    }
 
     const content = (
         <div className={style.info}>
-            <span><UserOutlined />&nbsp;&nbsp;个人资料</span>
+            <a href='javascript:void(0)'><UserOutlined />&nbsp;&nbsp;个人资料</a>
             <Divider plain  className={style.line}/>
-            <span><LogoutOutlined />&nbsp;&nbsp;退出登录</span>
+            <a href='javascript:void(0)' onClick={out}><LogoutOutlined />&nbsp;&nbsp;退出登录</a>
         </div>
     );
 

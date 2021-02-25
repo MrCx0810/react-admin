@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import {Route, BrowserRouter,Switch, Redirect} from 'react-router-dom'
+import {Route, BrowserRouter,Switch} from 'react-router-dom'
 import {ConfigProvider} from "antd";
 import zhCN from 'antd/lib/locale/zh_CN';
 import 'moment/locale/zh-cn';
@@ -14,10 +14,11 @@ function App() {
       <ConfigProvider  locale={zhCN}>
         <BrowserRouter>
             <Switch>
-                <Route path='/login'>
-                    {token ? <Redirect to='/'/> : <Login />}
+                <Route path='/login' component={Login}/>
+                <Route path='/' exact component={Home}>
+                    {token ? <Home/> : <Login />}
                 </Route>
-                <Route path='/' component={Home}/>
+                <Route path='/home' component={Home}/>
             </Switch>
         </BrowserRouter>
       </ConfigProvider>
