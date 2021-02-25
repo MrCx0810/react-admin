@@ -26,7 +26,7 @@ function Menus() {
                 onClick={handleClick}
                 style={{background:'transparent'}}
             >
-                <Menu.Item key='/home' icon={<HomeOutlined />}>
+                <Menu.Item key='/home' icon={<HomeOutlined />} style={{margin:0}}>
                     <Link to='/home'>
                         首页
                     </Link>

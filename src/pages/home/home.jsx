@@ -21,8 +21,8 @@ function Home() {
                                 标签栏
                             </Card>
                         </Breadcrumb>
-                        <HomeContent/>
-                        <div style={{ margin: '0 24px' }}>
+                        <HomeContent />
+                        <div>
                             <Card type="inner" className={styles.footer}>
                                 Copyright&nbsp;&nbsp;
                                 <CopyrightOutlined />&nbsp;

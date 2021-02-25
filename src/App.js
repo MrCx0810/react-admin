@@ -15,7 +15,7 @@ function App() {
         <BrowserRouter>
             <Switch>
                 <Route path='/login' component={Login}/>
-                <Route path='/' exact component={Home}>
+                <Route path='/'>
                     {token ? <Home/> : <Login />}
                 </Route>
                 <Route path='/home' component={Home}/>

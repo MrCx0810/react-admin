@@ -20,9 +20,9 @@ function Login(){
         console.log('Success:', values);
         login(values).then(res => {
             console.log(res);
-            history.replace("/")
             //保存token
             localStorage.setItem("token", res.data.token);
+            history.replace("/home")
        });
     };
 
