@@ -18,13 +18,12 @@ function HomeContent() {
                 backgroundColor: '#f0f2f5'
             }}
         >
-            <Switch>
+
                 <Route path='/user' component={User}/>
                 <Route path='/product' component={Product}/>
                 <Route>
                     这是首页的数据
                 </Route>
-            </Switch>
         </Content>
     );
 }

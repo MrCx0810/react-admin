@@ -18,9 +18,9 @@ function HeaderBar() {
 
     const content = (
         <div className={style.info}>
-            <a href='javascript:void(0)'><UserOutlined />&nbsp;&nbsp;个人资料</a>
+            <a ><UserOutlined />&nbsp;&nbsp;个人资料</a>
             <Divider plain  className={style.line}/>
-            <a href='javascript:void(0)' onClick={out}><LogoutOutlined />&nbsp;&nbsp;退出登录</a>
+            <a  onClick={out}><LogoutOutlined />&nbsp;&nbsp;退出登录</a>
         </div>
     );
 
